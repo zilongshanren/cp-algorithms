@@ -40,41 +40,20 @@ void Graph::addEdge(int u, int v, int w)
 // W is the maximum weight of an edge
 void Graph::shortestPath(int src, int W)
 {
-	/* With each distance, iterator to that vertex in
-	   its bucket is stored so that vertex can be deleted
-	   in O(1) at time of updation. So
-	   dist[i].first = distance of ith vertex from src vertex
-	   dist[i].second = iterator to vertex i in bucket number */
-	vector<pair<int, list<int>::iterator> > dist(V);
+	//1. Define the dist Array
 
-	// Initialize all distances as infinite (INF)
-	for (int i = 0; i < V; i++)
-		dist[i].first = INF;
+	//2. Initialize all distances as infinite (INF)
 
-	// Create buckets B[].
+	//3. Create buckets B[].
 	// B[i] keep vertex of distance label i
-	list<int> B[W * V + 1];
-
-	B[0].push_back(src);
-	dist[src].first = 0;
 
 	//
 	int idx = 0;
 	while (1)
 	{
-		// Go sequentially through buckets till one non-empty
-		// bucket is found
-		while (B[idx].size() == 0 && idx < W*V)
-			idx++;
+		//4. find the shortest path
 
-		// If all buckets are empty, we are done.
-		if (idx == W * V) {
-			break;
-		}
-
-		// Take top vertex from bucket and pop it
-		int u = B[idx].front();
-		B[idx].pop_front();
+		//5. Take top vertex from bucket and pop it
 
 		// Process all adjacents of extracted vertex 'u' and
 		// update their distanced if required.
@@ -89,22 +68,10 @@ void Graph::shortestPath(int src, int W)
 			// If there is shorted path to v through u.
 			if (dv > du + weight)
 			{
-				// If dv is not INF then it must be in B[dv]
-				// bucket, so erase its entry using iterator
-				// in O(1)
-				if (dv != INF) {
-					B[dv].erase(dist[v].second);
-				}
-
 				// updating the distance
-				dist[v].first = du + weight;
-				dv = dist[v].first;
+				// dist[v].first = du + weight;
+				// dv = dist[v].first;
 
-				// pushing vertex v into updated distance's bucket
-				B[dv].push_front(v);
-
-				// storing updated iterator in dist[v].second
-				dist[v].second = B[dv].begin();
 			}
 		}
 	}

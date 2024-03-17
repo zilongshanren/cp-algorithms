@@ -23,17 +23,21 @@ int main() {
 
 	while (q.size()) {
 		pair<int, int> c = q.front();
+        cout<<"process:"<<c.first<<", "<<c.second<<endl;
 		q.pop_front();
 		ans = max(ans, depth[c.first][c.second]);
 
 		for (int i = 0; i < 4; i++) {
 			int x = c.first + dx[i], y = c.second + dy[i];
 			if (inside(x, y) && depth[x][y] == 0) {
+                //相同的雪
 				if (snow[x][y] == snow[c.first][c.second]) {
+                    //copy depth to the new patch
 					depth[x][y] = depth[c.first][c.second];
 					q.push_front({x, y});
 				} else {
 					depth[x][y] = depth[c.first][c.second] + 1;
+                    // cout<<"x = "<<x<<", y = "<<y<<", depth = "<<depth[x][y]<<endl;
 					q.push_back({x, y});
 				}
 			}

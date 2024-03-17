@@ -1,37 +1,66 @@
+// https://cses.fi/problemset/task/1672
 #include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
-class Graph {
-    unordered_map<int, list<pair<int, int>>> m;
+struct Edge {
+    int a;
+    int b;
+    int w;
+};
 
-public:
-    void addEdge(int u, int v, int dist, bool bidir = true) {
-        m[u].push_back(make_pair(v, dist));
-        if (bidir)
-            m[v].push_back(make_pair(u, dist));
+
+
+int main() {
+    vector<Edge> edges;
+
+    int INF = 0x3f3f3f3f;
+    set<int> cities;
+
+    int n,m,q;
+    cin>>n>>m>>q;
+    for (int i = 0; i < m; ++i) {
+        Edge e;
+        cin>>e.a>>e.b>>e.w;
+        cities.insert(e.a);
+        cities.insert(e.b);
+        edges.push_back(e);
     }
 
-    void printAdj() {
-        for (auto j : m) {
-            cout << j.first << "->";
-            for (auto l : j.second)
-                cout << "(" << l.first << "," << l.second << ")";
-            cout << endl;
+    vector<int> distance[n];
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            distance[i][j] = INF;
         }
     }
 
-    void bellman_fold(int src) {}
-};
 
-int main() {
-    Graph g;
-    g.addEdge(1, 2, 1);
-    g.addEdge(1, 3, 4);
-    g.addEdge(2, 3, 1);
-    g.addEdge(3, 4, 2);
-    g.addEdge(1, 4, 7);
-    g.printAdj();
-    g.bellman_fold(1);
+    for (auto node : cities) {
+        //only need n-1 round
+        for (int i = 0; i < n-1; ++i) {
+            for(auto&& e : edges)  {
+                // if (distance[e.a] < INF) {
+                //     distance[e.b] = min(distance[e.b], distance[e.a] + e.w);
+                // }
+            }
+        }
+    }
+
+
+
+    for (int i = 0; i < q; ++i) {
+        int a, b;
+        cin>>a>>b;
+        if (a == 1) {
+            if (distance[b] < INF) {
+                cout<<distance[b]<<endl;
+            }
+            else {
+                cout<<-1<<endl;
+            }
+        }
+    }
+
 
     return 0;
 }
