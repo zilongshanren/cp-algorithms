@@ -28,14 +28,21 @@ void solve()
         }
     }
 
+    // for (int i = 0; i < n; i++) {
+    //     cout<<"p:"<<i<<" "<<p[i]<<endl;
+    // }
+
     if (x == -1) {
         cout << "No negative cycle found.";
     } else {
+        cout<<"x = "<<x<<endl;
         for (int i = 0; i < n; ++i)
             x = p[x];
 
+        cout<<"x = "<<x<<endl;
         vector<int> cycle;
         for (int v = x;; v = p[v]) {
+            // cout<<"v = "<<v<<endl;
             cycle.push_back(v);
             if (v == x && cycle.size() > 1)
                 break;
@@ -51,6 +58,12 @@ void solve()
 
 int main(int argc, char *argv[])
 {
+// 5 5
+// 1 2 3
+// 1 3 5
+// 3 2 2
+// 2 4 1
+// 4 3 -7
 
     cin>>n>>m;
 
