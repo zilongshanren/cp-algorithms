@@ -11,3 +11,9 @@ This repo contains solutions to my cp problems. It's a backup for refresh memory
 ** Syntax
 1. https://codebreaker.xyz/contest/hci2023p1
 2. https://codebreaker.xyz/contest/hci2023p2
+
+   
+* some useful links:
+** https://www.cs.purdue.edu/homes/ninghui/courses/390_Fall19/lectures.html
+** https://github.com/eyangch/competitive-programming
+

@@ -112,12 +112,10 @@ int main()
 	// by an edge with
 	// weight[0]
 
-	vector<int> source = { 1, 3, 2, 3,
-						2, 5, 1, 3 };
-	vector<int> destination = { 3, 4, 4,
-								2, 5, 4, 2, 5 };
-	vector<int> weights = { 75, 51, 19,
-							95, 42, 31, 9, 66 };
+	vector<int> source = { 1, 3, 2, 3, 2, 5, 1, 3 };
+	vector<int> destination = { 3, 4, 4, 2, 5, 4, 2, 5 };
+	vector<int> weights = { 75, 51, 19, 95, 42, 31, 9, 66 };
+
 	for (int i = 0; i < E; i++) {
 		edges[i].src = source[i];
 		edges[i].dest = destination[i];
