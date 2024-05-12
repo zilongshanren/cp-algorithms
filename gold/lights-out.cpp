@@ -84,11 +84,11 @@ int main() {
 		ang[i] = rt > 0 ? MX + 2 : MX + 1;
 	}
 
-    // cout<<"ang"<<endl;
-    // for (auto& item : ang) {
-    //     cout<<item<<" ";
-    // }
-    // cout<<endl;
+    cout<<"ang"<<endl;
+    for (auto& item : ang) {
+        cout<<item<<" ";
+    }
+    cout<<endl;
 
 	vector<int> hash(1);
 	hash[0] = 0;
@@ -125,6 +125,7 @@ int main() {
     cout<<endl;
 
 	function<int(int i, int j)> get_hash = [&](int i, int j) {
+        cout<<"get hash i = "<<i<<", j = "<<j<<endl;
 		// gets the hash for the substring from i -> j
 		// you can also compute this using the mod inverse of poly_i
 		return ((hash[j] - ((hash[i] * poly[j - i]) % MOD) + MOD) % MOD);
@@ -143,11 +144,15 @@ int main() {
 			int occ = 0;
 
 			for (int j = 0; j < (int)(hash.size()) - len; j++) {
+                cout<<"--------------------\n";
 				if (get_hash(j, j + len) == cr) {
                     // cout<<"found i = "<<i<<", j = "<<j<<endl;
                     occ++;
+                    // cout<<"occ="<<occ<<endl;
                 }
 			}
+            cout<<endl;
+            cout<<endl;
 
 			// bessie can uniquely identify her position
 			if (occ == 1) {

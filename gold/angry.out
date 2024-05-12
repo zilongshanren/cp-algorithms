@@ -1,0 +1,97 @@
+close = 2, pos = 10
+left search... pos_lo 10
+close = 2, pos = 15
+left new_index = 0
+left search... pos_lo 15
+close = 3, pos = 18
+left new_index = 1
+left new_index = 1
+left search... pos_hi 17
+close = 2, pos = 16
+left new_index = 0
+left search... pos_lo 16
+close = 3, pos = 17
+left new_index = 1
+left new_index = 1
+left search... pos_hi 16
+after bi search pos = 16
+
+
+right search... hi power 10
+close = 2, pos = 10
+left new_index = 0
+left search... pos_hi 9
+close = 1, pos = 5
+left search... pos_lo 5
+close = 2, pos = 7
+left search... pos_lo 7
+close = 2, pos = 8
+left new_index = 0
+left search... pos_hi 7
+after bi search pos = 7
+
+
+right new_index = 2
+right search... lo power 6
+close = 2, pos = 10
+left search... pos_lo 10
+close = 2, pos = 15
+left new_index = 1
+left new_index = 1
+left search... pos_hi 14
+close = 2, pos = 12
+left new_index = 0
+left search... pos_lo 12
+close = 2, pos = 13
+left new_index = 0
+left search... pos_lo 13
+close = 2, pos = 14
+left new_index = 0
+left search... pos_lo 14
+after bi search pos = 14
+
+
+right search... hi power 8
+close = 2, pos = 10
+left new_index = 0
+left search... pos_lo 10
+close = 2, pos = 15
+left new_index = 1
+left new_index = 1
+left search... pos_hi 14
+close = 2, pos = 12
+left new_index = 0
+left search... pos_lo 12
+close = 2, pos = 13
+left new_index = 0
+left search... pos_lo 13
+close = 2, pos = 14
+left new_index = 1
+left new_index = 1
+left search... pos_hi 13
+after bi search pos = 13
+
+
+right new_index = 4
+right search... hi power 7
+close = 2, pos = 10
+left new_index = 0
+left search... pos_lo 10
+close = 2, pos = 15
+left new_index = 1
+left new_index = 1
+left search... pos_hi 14
+close = 2, pos = 12
+left new_index = 0
+left search... pos_lo 12
+close = 2, pos = 13
+left new_index = 1
+left new_index = 1
+left search... pos_hi 12
+after bi search pos = 12
+
+
+right new_index = 3
+right new_index = 4
+right search... hi power 6
+3.0

@@ -16,4 +16,10 @@ This repo contains solutions to my cp problems. It's a backup for refresh memory
 * some useful links:
 ** https://www.cs.purdue.edu/homes/ninghui/courses/390_Fall19/lectures.html
 ** https://github.com/eyangch/competitive-programming
+** https://codeforces.com/blog/entry/57282
+** https://oi-wiki.org/dp/
 
+* Problem list
+** https://codeforces.com/blog/entry/55274
+** https://vjudge.net/article/446
+** 
