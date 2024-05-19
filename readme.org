@@ -4,8 +4,9 @@ This repo contains solutions to my cp problems. It's a backup for refresh memory
 * How to include <bits/stdc++.h> on your MacOSX system
 1. In finder, press Cmd+Shift+G
 2. Paste : /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1
-3. Create a new folder "bits" here
-4. Download the file or create "stc++.h" and paste the content from: https://gist.github.com/frankchen0130/9ac562b55fa7e03689bca30d0e52b0e5
+3. Some new macos system should be: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/
+4. Create a new folder "bits" here
+5. Download the file or create "stc++.h" and paste the content from: https://gist.github.com/frankchen0130/9ac562b55fa7e03689bca30d0e52b0e5
 
 * Reference 
 ** Syntax

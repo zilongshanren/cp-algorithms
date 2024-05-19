@@ -1,8 +1,6 @@
 // https://www.geeksforgeeks.org/closest-pair-of-points-using-sweep-line-algorithm/
 
-#include <vector>
-#include <iostream>
-#include <set>
+#include <bits/stdc++.h>
 using namespace std;
 
 // To find the closest pair of points
