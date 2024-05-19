@@ -19,6 +19,8 @@ This repo contains solutions to my cp problems. It's a backup for refresh memory
 ** https://codeforces.com/blog/entry/57282
 ** https://oi-wiki.org/dp/
 ** https://www.cnblogs.com/lwtyyds/p/15774070.html
+** https://codeforces.com/blog/entry/91363
+** https://youkn0wwho.academy/topic-list
 * Problem list
 ** https://codeforces.com/blog/entry/55274
 ** https://vjudge.net/article/446
@@ -29,3 +31,4 @@ This repo contains solutions to my cp problems. It's a backup for refresh memory
 * Geometry 
 ** https://www.topcoder.com/thrive/articles/Geometry%20Concepts%20part%201:%20Basic%20Concepts
 ** https://www.topcoder.com/thrive/articles/Line%20Sweep%20Algorithms  (line sweep algorithm)
+** https://youkn0wwho.academy/topic-list/sweep_line_algorithm
