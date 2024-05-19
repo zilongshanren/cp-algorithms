@@ -2,7 +2,8 @@
 
 using namespace std;
 
-struct Point {
+class Point {
+public:
 	long double x, y;
 	bool operator<(const Point &other) {
 		if (x == other.x) { return y < other.y; }
@@ -58,9 +59,7 @@ pair<Point, Point> solve(vector<Point> &points, int l, int r) {
 			strip.push_back(points[i]);
 		}
 	}
-	sort(strip.begin(), strip.end(), [](Point a, Point b) {
-		return a.y < b.y || (a.y == b.y && a.x < b.x);
-	});
+	sort(strip.begin(), strip.end(), [](Point a, Point b) {return a.y < b.y || (a.y == b.y && a.x < b.x);});
 	return get_closest_points(ans, strip_solve(strip));
 }
 
@@ -73,9 +72,8 @@ int main() {
 			scanf("%Lf %Lf", &x, &y);
 			v.push_back({x, y});
 		}
-		sort(v.begin(), v.end());
+        std::sort(v.begin(), v.end(), [](Point a, Point b) {return a.x < b.x || (a.x == b.x && a.y < b.y);});
 		pair<Point, Point> ans = solve(v, 0, v.size());
-		printf("%0.2Lf %0.2Lf %0.2Lf %0.2Lf\n", ans.first.x, ans.first.y,
-		       ans.second.x, ans.second.y);
+		printf("%0.2Lf %0.2Lf %0.2Lf %0.2Lf\n", ans.first.x, ans.first.y, ans.second.x, ans.second.y);
 	}
 }
