@@ -1,8 +1,12 @@
 // https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/6/CGL_6_A
 
 #include <iostream>
+#include <iterator>
 #include <vector>
 #include <set>
+#include <algorithm>
+#include <cmath>
+#include <cstdio>
 
 using namespace std;
 
@@ -12,61 +16,71 @@ using namespace std;
 #define RIGHT 2
 #define TOP 3
 
+
 class Point
 {
 public:
     double x, y;
-    Point() {
+    Point()
+    {
     }
-
-    Point(double x, double y) {
+    Point(double x, double y)
+    {
         (*this).x = x;
         (*this).y = y;
     }
 
-    //叉乘
-    double operator^(const Point &p) const {
+    double operator^(const Point &p) const //叉乘
+    {
         return x * p.y - y * p.x;
     }
 
-    //点乘
-    double operator*(const Point &p) const {
+    double operator*(const Point &p) const //点乘
+    {
         return x * p.x + y * p.y;
     }
 
-    Point operator*(const double &d) const {
+    Point operator*(const double &d) const
+    {
         return Point(x * d, y * d);
     }
 
-    Point operator/(const double &d) const {
+    Point operator/(const double &d) const
+    {
         return Point(x / d, y / d);
     }
 
-    Point operator-(const Point &p) const {
+    Point operator-(const Point &p) const
+    {
         return Point(x - p.x, y - p.y);
     }
 
-    Point operator+(const Point &p) const {
+    Point operator+(const Point &p) const
+    {
         return Point(x + p.x, y + p.y);
     }
 
-    double sqr() {
+    double sqr()
+    {
         return x * x + y * y;
     }
-
-    double abs() {
+    double abs()
+    {
         return sqrt(sqr());
     }
 
-    double distance(const Point &p) {
+    double distance(const Point &p)
+    {
         return fabs((*this - p).abs());
     }
 
-    void read() {
+    void read()
+    {
         cin >> x >> y;
     }
 
-    void print() {
+    void print()
+    {
 
         printf("%.10lf %.10lf\n", x, y);
     }
@@ -76,9 +90,9 @@ class Line
 {
 public:
     Point p1, p2;
-    Line(){
-    };
-    Line(Point p1, Point p2) {
+    Line(){};
+    Line(Point p1, Point p2)
+    {
         (*this).p1 = p1;
         (*this).p2 = p2;
     }
@@ -93,7 +107,8 @@ public:
     EndPoint(Point p, int seg, int st)
         : p(p), seg(seg), st(st){};
 
-    bool operator<(const EndPoint &ep) const {
+    bool operator<(const EndPoint &ep) const
+    {
         //按y坐标升序排序
         if (p.y == ep.p.y)
             return st < ep.st; //y相同，按照下端点、左端点、右端点、上端点的顺序排列
@@ -136,12 +151,6 @@ int manhattan(vector<Line> S)
 
     sort(EP, EP + (2 * n)); //按照端点的y坐标升序排列
 
-    cout<<"after sort:"<<endl;
-    for (int i = 0; i < 2 * n; ++i) {
-        // cout<<EP[i].seg<<", "<<EP[i].st<<", "<<endl;
-        EP[i].p.print();
-    }
-
     set<int> BT; //二叉搜索树
 
     int cnt = 0;
@@ -152,19 +161,15 @@ int manhattan(vector<Line> S)
         if (EP[i].st == TOP)
         {
             BT.erase(EP[i].p.x); //删除上端点
-            cout<<"delete top end "<<EP[i].p.x<<endl;
         }
-        else if (EP[i].st == BOTTOM) {
+        else if (EP[i].st == BOTTOM)
             BT.insert(EP[i].p.x); //添加下端点
-            cout<<"add bottom end "<<EP[i].p.x<<endl;
-        }
         else if (EP[i].st == LEFT)
         {
             set<int>::iterator b = BT.lower_bound(S[EP[i].seg].p1.x);
             set<int>::iterator e = BT.upper_bound(S[EP[i].seg].p2.x);
 
             cnt += distance(b, e); //加上b、e之间的距离（点数）
-            cout<<"distance "<<*b<<" and "<<*e<<", count = "<<distance(b, e)<<endl;
         }
     }
     return cnt;
