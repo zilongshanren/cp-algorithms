@@ -4,11 +4,7 @@ typedef long ll;
 
 #define N 100005
 ll n;
-ll f[N][2];//f[][0]--不住 f[][1]--住
-
-//p for pointers
-//h for
-
+ll f[N][2];//f[][0]--不选 f[][1]-- 选
 ll tot,p[N],h[N],ne[N<<1];
 
 

@@ -22,4 +22,10 @@ This repo contains solutions to my cp problems. It's a backup for refresh memory
 * Problem list
 ** https://codeforces.com/blog/entry/55274
 ** https://vjudge.net/article/446
-** 
+** https://cses.fi/problemset/list
+* Editorial list
+** https://codeforces.com/blog/entry/79048
+
+* Geometry 
+** https://www.topcoder.com/thrive/articles/Geometry%20Concepts%20part%201:%20Basic%20Concepts
+** https://www.topcoder.com/thrive/articles/Line%20Sweep%20Algorithms  (line sweep algorithm)
