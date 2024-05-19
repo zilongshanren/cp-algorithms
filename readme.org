@@ -21,6 +21,8 @@ This repo contains solutions to my cp problems. It's a backup for refresh memory
 ** https://www.cnblogs.com/lwtyyds/p/15774070.html
 ** https://codeforces.com/blog/entry/91363
 ** https://youkn0wwho.academy/topic-list
+** https://github.com/pulkit1joshi/handbook_codes
+** https://github.com/agrawal-d/cph
 * Problem list
 ** https://codeforces.com/blog/entry/55274
 ** https://vjudge.net/article/446
