@@ -12,3 +12,9 @@ https://usaco.guide
 ## codeforces
 ## 董晓算法
 ## youknowwho
+
+# practice problems
+## NOI of Singapore
+https://codebreaker.xyz/group/deccourse22practice
+## edu round
+https://codebreaker.xyz/group/edu
