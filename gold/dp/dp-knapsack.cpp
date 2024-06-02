@@ -34,6 +34,7 @@ int dfs(int u) {
 int main(int argc, char *argv[])
 {
     cin>>n>>m;
+    //a[N][N]  a[1] ->(2,3,4)
 
     for (int i = 1; i <= n; ++i) {
         int p;
@@ -42,6 +43,8 @@ int main(int argc, char *argv[])
             root = i;
         }
         else {
+            //b[p] = b[p] + 1
+            //a[p]
             a[p][b[p]++] = i;
         }
     }

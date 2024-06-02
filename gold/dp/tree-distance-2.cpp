@@ -29,7 +29,6 @@ void dfs1(int node = 1, int parent = 0, ll depth = 0)
             // Add the size of the child's subtree to
             // dp[node]
             dp[node] += dp[i];
-            cout<<"dp["<<node<<"]"<<dp[node]<<", dp["<<i<<"]"<<dp[i]<<endl;
         }
 }
 
@@ -68,12 +67,6 @@ int main()
 
     // Run the first DFS
     dfs1();
-
-    cout<<"dp1:"<<endl;
-    for (int i = 1; i <= n; ++i) {
-        cout<<dp[i]<<" ";
-    }
-    cout<<endl;
 
     // Run the second DFS
     dfs2();
