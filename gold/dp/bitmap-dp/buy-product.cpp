@@ -10,9 +10,15 @@ int main(int argc, char *argv[])
 {
     int total[1<<K][N] = {{0}};
 
+    for (int i = 1; i < (1<<K); ++i) {
+        for (int j = 0; j < N; ++j) {
+            total[i][j] = 10000;
+        }
+    }
+
     int price[K][N] = {
-        {6,9,5,2,8,9,1,6},
-        {8,2,6,2,7,5,7,2},
+        {6,9,5,4,8,9,1,6},
+        {8,4,6,4,7,5,7,4},
         {5,3,9,7,3,5,1,4}
     };
 
@@ -39,8 +45,8 @@ int main(int argc, char *argv[])
         cout<<endl;
     }
     cout<<endl;
-
-    // cout<<"ans = "<<total[(1<<k)-1][n-1]<<endl;
+    //111
+    cout<<"ans = "<<total[(1<<k)-1][n-1]<<endl;
 
 
     return 0;
